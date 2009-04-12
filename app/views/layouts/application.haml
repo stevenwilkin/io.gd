@@ -1,0 +1,31 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml", 'xml:lang' => 'en', :lang => 'en'}
+
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'} 
+    %title
+      - if @title_for_layout
+        == &raquo; #{@title_for_layout}
+    %meta{:name => 'description', :content => 'Yet another URL shortening service'}
+    = stylesheet_link_tag 'reset', '301'
+
+  %body
+
+    #wrapper
+
+      #header
+        %h1
+          = link_to '301', root_path
+          \.im
+        %p
+          = link_to 'Steven Wilkin', 'http://stevenwilkin.com'
+          = link_to 'Contact', 'http://stevenwilkin.com/contact'
+
+      #admin
+        #notice
+          = flash[:notice]
+  
+      #nav
+          
+      #content
+        = yield
