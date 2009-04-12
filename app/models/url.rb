@@ -1,5 +1,7 @@
 class Url < ActiveRecord::Base
 
+  after_create :generate_short_url  # assign the short_url once we have an id
+
   attr_accessible :url  # the only user-specifiable attribute
 
   validates_presence_of :url
@@ -41,6 +43,11 @@ class Url < ActiveRecord::Base
   		remainder = s.slice(0, s.length-1)
   		self.convert_from_base62(last) + ($chars.length * self.convert_from_base62(remainder))
   	end
+  end
+
+  # generate a short_url according to the id of the Url
+  def generate_short_url
+    self.update_attribute :short_url, self.class.convert_to_base62(self.id)
   end
 
 end
