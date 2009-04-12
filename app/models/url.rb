@@ -1,5 +1,20 @@
 class Url < ActiveRecord::Base
 
+  attr_accessible :url  # the only user-specifiable attribute
+
+  validates_presence_of :url
+
+  # test existance of a url by connecting to it
+  validates_each :url, :allow_nil => true do |record, attr, value|
+    require 'open-uri'
+    begin
+      open value
+    rescue
+      record.errors.add attr, "Can't connect to URL"
+    end
+  end
+
+
   private
 
   # short_urls are effectively base-62 numbers comprising the following chars (in ASCII order)
@@ -17,6 +32,7 @@ class Url < ActiveRecord::Base
   end
 
   # convert a "base-62" string to a base-10 number
+  # this is not actually used, here just for reference
   def self.convert_from_base62(s)
   	if s.length == 1
   		$chars.index(s)
@@ -25,17 +41,6 @@ class Url < ActiveRecord::Base
   		remainder = s.slice(0, s.length-1)
   		self.convert_from_base62(last) + ($chars.length * self.convert_from_base62(remainder))
   	end
-  end
-
-  # test existance of a url by connecting to it
-  def valid_url(url)
-    require 'open-uri'
-    begin
-      open url
-    rescue
-      return false
-    end
-    true
   end
 
 end
