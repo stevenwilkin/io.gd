@@ -33,7 +33,11 @@ ActionController::Routing::Routes.draw do |map|
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
 
-  map.root :controller => 'urls', :action => 'new'
+  # GET /
+  map.root :controller => 'urls', :action=> 'new', :conditions => {:method => :get}
+
+  # POST / - has to be called 'urls' for form_for to automatically use correct action
+  map.urls '/', :controller => 'urls', :action=>'create', :conditions => {:method => :post}
 
   map.redirect '/:short_url', :controller => 'urls', :action => 'show', :short_url => /[0-9A-Za-z]+/
 
