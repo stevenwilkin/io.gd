@@ -35,7 +35,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => 'urls', :action => 'new'
 
-  map.redirect '/:short_url', :controller => 'urls', :action => 'show'
+  map.redirect '/:short_url', :controller => 'urls', :action => 'show', :short_url => /[0-9A-Za-z]+/
 
   # See how all your routes lay out with "rake routes"
 
