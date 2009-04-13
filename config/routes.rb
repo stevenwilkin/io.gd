@@ -39,7 +39,7 @@ ActionController::Routing::Routes.draw do |map|
   # POST / - has to be called 'urls' for form_for to automatically use correct action
   map.urls '/', :controller => 'urls', :action=>'create', :conditions => {:method => :post}
 
-  map.redirect '/:short_url', :controller => 'urls', :action => 'show', :short_url => /[0-9A-Za-z]+/
+  map.shortened '/:short_url', :controller => 'urls', :action => 'show', :short_url => /[0-9A-Za-z]+/
 
   # See how all your routes lay out with "rake routes"
 
