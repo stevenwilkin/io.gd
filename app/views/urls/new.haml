@@ -1,0 +1,6 @@
+- form_for @new_url do |f|
+  - unless @new_url.errors.empty?
+    #validation_errors= @new_url.errors.full_messages.first
+  = f.label :url, 'URL'
+  = f.text_field :url
+  = f.submit 'Shorten'

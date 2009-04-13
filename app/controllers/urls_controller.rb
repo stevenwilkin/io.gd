@@ -1,6 +1,16 @@
 class UrlsController < ApplicationController
 
   def new
+    @new_url = Url.new
+  end
+
+  def create
+    @new_url = Url.new(params[:url])
+    if @new_url.save
+      render :shortened
+    else
+      render :new
+    end
   end
 
   def show
