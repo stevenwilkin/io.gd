@@ -12,7 +12,7 @@ class Url < ActiveRecord::Base
     begin
       open value
     rescue
-      record.errors.add attr, "Can't connect to URL"
+      record.errors.add attr, 'is unreachable'
     end
   end
 
