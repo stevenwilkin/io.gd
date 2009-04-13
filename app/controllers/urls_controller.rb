@@ -6,6 +6,7 @@ class UrlsController < ApplicationController
 
   def create
     @new_url = Url.new(params[:url])
+    @new_url.host = request.host_with_port  # allow model to check app's domain
     if @new_url.save
       render :shortened
     else

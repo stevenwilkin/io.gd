@@ -1,18 +1,26 @@
 class Url < ActiveRecord::Base
 
+  # hack so model can be provided with domain the app is running on
+  attr_accessor :host
+
   after_create :generate_short_url  # assign the short_url once we have an id
 
   attr_accessible :url  # the only user-specifiable attribute
 
   validates_presence_of :url
 
+  # don't accept a url on this domain
   # test existance of a url by connecting to it
   validates_each :url, :allow_blank => true do |record, attr, value|
-    require 'open-uri'
-    begin
-      open value
-    rescue
-      record.errors.add attr, 'is unreachable'
+    if record.host && value =~ /#{record.host}(\/.*)?/
+      record.errors.add attr, 'is already shortened'
+    else
+      require 'open-uri'
+      begin
+        open value
+      rescue
+        record.errors.add attr, 'is unreachable'
+      end
     end
   end
 
