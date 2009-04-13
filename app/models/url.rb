@@ -7,7 +7,7 @@ class Url < ActiveRecord::Base
   validates_presence_of :url
 
   # test existance of a url by connecting to it
-  validates_each :url, :allow_nil => true do |record, attr, value|
+  validates_each :url, :allow_blank => true do |record, attr, value|
     require 'open-uri'
     begin
       open value
