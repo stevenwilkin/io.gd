@@ -41,6 +41,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.shortened '/:short_url', :controller => 'urls', :action => 'show', :short_url => /[0-9A-Za-z]+/
 
+  map.fourohfour '/*request', :controller => 'pages', :action=> 'fourohfour'
+
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.
