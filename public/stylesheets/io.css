@@ -41,13 +41,32 @@ a {
   font-weight :normal;
 }
 
-#content {
+#shorten #label {
+  float: left;
+  padding: 0 0 10px 0;
+}
+
+#shorten #input {
+  float: left;
+  clear: left;
+  padding: 0 10px 0 0;
+}
+
+#shorten #submit {
+  float: left;
+}
+
+#shorten #errors{
+  float: left;
+  clear: left;
 }
 
 #invalid_url {
 }
 
 #footer {
+  clear: left;
+  padding: 25px 0 0 0;
   text-align: right;
 }
 

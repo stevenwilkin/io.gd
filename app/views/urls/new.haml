@@ -1,6 +1,10 @@
-- form_for @new_url do |f|
+#shorten
+  - form_for @new_url do |f|
+    #label
+      = f.label :url, 'Enter the URL to shorten'
+    #input
+      = f.text_field :url
+    #submit
+      = f.submit 'Shorten'
   - unless @new_url.errors.empty?
-    #validation_errors= @new_url.errors.full_messages.first
-  = f.label :url, 'URL'
-  = f.text_field :url
-  = f.submit 'Shorten'
+    #errors= @new_url.errors.full_messages.first
