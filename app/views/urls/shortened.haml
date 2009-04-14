@@ -3,4 +3,4 @@
     = @new_url.url
     has been shortened to
   #url
-    %input{:id => 'short_url', :value => shortened_url(@new_url.short_url)}
+    %input{:id => 'short_url', :readonly => true, :value => shortened_url(@new_url.short_url)}
