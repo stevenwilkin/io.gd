@@ -89,6 +89,29 @@ a {
 /* }}} */
 
 
+/* {{{ shortened url  */
+#shortened #url {
+  float: left;
+  clear: left;
+  background: url(/images/box.png) transparent no-repeat;
+  width: 500px;
+  height: 40px;
+}
+
+#shortened label {
+  margin: 0 0 10px 0;
+  float: left;
+}
+
+#shortened input {
+  float: left;
+  font-size: 16px;
+  width: 482px;
+  margin: 9px 9px 0 9px;
+  border: 0;
+}
+/* }}} */
+
 /* {{{ footer */
 #footer {
   clear: left;
