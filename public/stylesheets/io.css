@@ -41,6 +41,7 @@ a {
   font-weight :normal;
 }
 
+/* {{{ shorten form */
 #shorten #label {
   float: left;
   padding: 0 0 10px 0;
@@ -49,17 +50,29 @@ a {
 #shorten #input {
   float: left;
   clear: left;
-  padding: 0 10px 0 0;
+  background: url(/images/box.png) transparent no-repeat;
+  width: 500px;
+  height: 40px;
+}
+
+#shorten #input input#url_url {
+  float: left;
+  font-size: 16px;
+  width: 400px;
+  margin: 9px 9px 0 9px;
+  border: 0;
 }
 
 #shorten #submit {
   float: left;
+  margin: 9px 9px 0 0;
 }
 
 #shorten #errors{
   float: left;
   clear: left;
 }
+/* }}} */
 
 #invalid_url {
 }

@@ -4,7 +4,7 @@
       = f.label :url, 'Enter the URL to shorten'
     #input
       = f.text_field :url
-    #submit
-      = f.submit 'Shorten'
+      #submit
+        = f.submit 'Shorten'
   - unless @new_url.errors.empty?
     #errors= @new_url.errors.full_messages.first
