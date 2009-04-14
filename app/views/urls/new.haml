@@ -8,3 +8,6 @@
         = f.submit 'Shorten'
   - unless @new_url.errors.empty?
     #errors= @new_url.errors.full_messages.first
+
+:javascript
+  document.getElementById('url_url').focus();
