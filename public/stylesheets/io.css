@@ -84,6 +84,7 @@ a {
 #shorten #errors{
   float: left;
   clear: left;
+  margin: 10px 0 0;
 }
 /* }}} */
 

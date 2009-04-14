@@ -7,7 +7,7 @@
       #submit
         = f.submit 'Shorten'
   - unless @new_url.errors.empty?
-    #errors= @new_url.errors.full_messages.first
+    #errors= @new_url.errors.full_messages.first.gsub(/Url/, 'URL')
 
 :javascript
   document.getElementById('url_url').focus();
