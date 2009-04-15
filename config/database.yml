@@ -41,8 +41,8 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: redirector_production
+  database: io_gd_production
   pool: 5
-  username: root
-  password: 
-  socket: /opt/local/var/run/mysql5/mysqld.sock
+  username: io_gd
+  password: wP5TAWVDqXu3
+  socket: /var/run/mysqld/mysqld.sock
