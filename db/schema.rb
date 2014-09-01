@@ -12,8 +12,8 @@
 ActiveRecord::Schema.define(:version => 20090410204713) do
 
   create_table "urls", :force => true do |t|
-    t.string "url",       :null => false
-    t.binary "short_url"
+    t.string "url",                    :null => false
+    t.string "short_url", :limit => 5
   end
 
   add_index "urls", ["short_url"], :name => "index_urls_on_short_url", :unique => true
