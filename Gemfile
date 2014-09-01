@@ -4,6 +4,7 @@ ruby '1.8.7'
 
 gem 'rails', '2.3.4'
 
+gem 'haml', '2.2.3'
 gem 'pg'
 
 group :development, :test do

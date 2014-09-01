@@ -11,6 +11,7 @@ GEM
     activeresource (2.3.4)
       activesupport (= 2.3.4)
     activesupport (2.3.4)
+    haml (2.2.3)
     pg (0.17.1)
     rack (1.0.1)
     rails (2.3.4)
@@ -30,6 +31,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  haml (= 2.2.3)
   pg
   rails (= 2.3.4)
   rake (= 0.8.7)
