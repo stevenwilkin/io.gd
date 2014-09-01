@@ -8,4 +8,6 @@ gem 'pg'
 
 group :development, :test do
   gem 'rake', '0.8.7'
+  gem 'rspec-rails', '1.2.9'
+  gem 'rspec', '1.2.9'
 end
