@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '1.8.7'
 
-gem 'rails', '2.3.4'
+gem 'rails', '3.2.17'
 
 gem 'haml', '2.2.3'
 gem 'pg'
